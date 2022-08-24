@@ -109,7 +109,7 @@ for (i in c('0', '4', '8','12','16',
            '60','64', '68' )){
   setnames(circadian_data, i, paste('X',i,sep=''))
 }
-fimo_results_all_module_genes <- fread('Data/Circadian/Used/Produced/All_module_genes/fimo_results_all_module_genes.tsv')
+fimo_results_all_module_genes <- fread('data/circadian/produced/all_module_genes/fimo_v1.1_all_module_genes.tsv')
 
 just_phase <- circadian_data[ZT24.68_q.01 == 'Y',.(gene,CT)]
 

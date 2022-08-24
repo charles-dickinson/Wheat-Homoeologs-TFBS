@@ -3,11 +3,11 @@
 library(data.table)
 library(ggplot2)
 
-gene_module_data <- fread('Data/Circadian/Used/Produced/Two_one_module_genes/two_one_modules_phase_per_gene.csv')
-triad_module_data <- fread('Data/Circadian/Used/Produced/Two_one_module_genes/two_one_modules_phase_categories.csv')
+gene_module_data <- fread('data/circadian/produced/two_one_module_genes/two_one_modules_phase_per_gene.csv')
+triad_module_data <- fread('data/circadian/produced/two_one_module_genes/two_one_modules_phase_categories.csv')
 just_evening <- gene_module_data[triad_module_data,on=.(triad)][phase_same %in% c('W4','W5')]
-motif_mapping <- fread('Data/Circadian/Used/Produced/All_module_genes/Enriched_motifs_grouped.txt')
-fimo_results <- fread('Data/Circadian/Used/Produced/Two_one_module_genes/fimo_results_two_one_module_genes_simple.csv')
+motif_mapping <- fread('data/circadian/produced/all_module_genes/enriched_motifs_grouped.txt')
+fimo_results <- fread('data/circadian/produced/two_one_module_genes/fimo_v1.1_two_one_module_genes_simple.csv')
 
 fimo_results <- fimo_results[gene %in% just_evening$gene,]
 
